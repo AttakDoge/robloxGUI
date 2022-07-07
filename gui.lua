@@ -32,44 +32,28 @@ _G.Settings = {
     ['Name'] = 'Doge Hub',
     ['Intro'] = true,
     ['Keybind'] = 'LeftAlt'
-    }
-    
-    local lib = loadstring(game:HttpGet("https://pastebin.com/raw/QPehPJ6m", true))() --Shadow V2 UI Library
-    
-    
-    local tab1 = lib:CreateTab('Tab1')
-    
-    tab1:Label('Epik Label')
-    tab1:Button('Epik Button', function()
-    print("OMG, YOU PRESSED THE BUTTON! YOU'RE SO SMART!")
-    end)
-    tab1:Toggle('Epik Toggle', false, function(bool)
-    print(bool)
-    end)
-    tab1:TextBox('Epik Textbox', 'Placeholder idk', function(output)
-    print(output)
-    end)
-    tab1:Dropdown('Epik Dropdown', {'Epic', 'Right?', 'Skillz'}, function(output)
-    print(output)
-    end)
-    tab1:Label('Everything is epik, totes.')
-    
-    local tab2 = Library:CreateTab('Tab2')
-    tab2:Label('OMG ANOTHER TAB!')
-    
-    
-    --[[
-    Refresh example:
-    ]]
-    local TabwithRefresh = lib:CreateTab('TabwithRefresh')
-    
-    local Dropdown = TabwithRefresh:Dropdown('Epik Dropdown', {'Epic', 'Right?', 'Skillz'}, function(output)
-    print(output)
-    end)
-    
-    wait(10)
-    
-    Dropdown:Refresh('OMG REFRESH', {'NANI', 'WHAT IS', 'THIS MAGIC?'}, function(output)
-    print(output)
-    print('lol')
-    end)
+}
+
+local lib = loadstring(game:HttpGet("https://pastebin.com/raw/QPehPJ6m", true))() --Shadow V2 UI Library
+
+local tab1 = lib:CreateTab('Unviversal Scripts')
+
+tab1:Label('Universal Scripts')
+
+--Walkspeed
+tab1:TextBox('Walkspeed', '16', function(output)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = output
+end)
+
+--Jump power
+tab1:TextBox('Jump Power', '50', function(output)
+    game.Players.LocalPlayer.Character.Humanoid.Walkspeed = output
+end)
+
+--Fast heal
+tab1:Toggle('Fast Heal', false, function(bool)
+    while bool do
+        game.Players.LocalPlayer.Character.Humanoid.Health = game.Players.LocalPlayer.Character.Humanoid.Health + 5
+        wait(0.2)
+    end
+end)
