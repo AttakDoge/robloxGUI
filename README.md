@@ -7,6 +7,8 @@ Official Name:
 |__/    |____|    |____|    |____        |    |    |____|    |___ /
 
 
+lol readme go brrrr
+
 This was GUI made by AttakDoge
 
 This is just a compilation of scripts that I got.
