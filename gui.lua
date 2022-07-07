@@ -1,5 +1,3 @@
---I made this off a template -AttakDoge
-
 --All ui stuff idk what to call it
 --[[
     lib is the ui library
@@ -40,21 +38,32 @@ local tab1 = lib:CreateTab('Scripts 1')
 
 tab1:Label('Universal Scripts')
 
+local playerself = game.Players.LocalPlayer.Character
+
 --Walkspeed
 tab1:TextBox('Walkspeed', '16', function(output)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = output
+    playerself.Humanoid.WalkSpeed = output
 end)
 
 --Jump power
 tab1:TextBox('Jump Power', '50', function(output)
-    game.Players.LocalPlayer.Character.Humanoid.Walkspeed = output
+    playerself.Humanoid.Walkspeed = output
 end)
 
 --Fast heal
 tab1:Toggle('Fast Heal', false, function(bool)
     while bool do
-        game.Players.LocalPlayer.Character.Humanoid.Health = game.Players.LocalPlayer.Character.Humanoid.Health + 5
+        playerself.Humanoid.Health = game.Players.LocalPlayer.Character.Humanoid.Health + 5
         wait(0.2)
     end
 end)
 
+--Lots of health
+tab1:Toggle('Lots of Health', false, function(bool)
+    playerself.Humanoid.MaxHealth = math.huge
+end)
+
+--Reset Character
+tab1:Button('Reset Character', function()
+    playerself.Humanoid.Health = 0
+end)
