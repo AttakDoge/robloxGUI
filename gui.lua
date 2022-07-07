@@ -36,7 +36,7 @@ _G.Settings = {
 
 local lib = loadstring(game:HttpGet("https://pastebin.com/raw/QPehPJ6m", true))() --Shadow V2 UI Library
 
-local tab1 = lib:CreateTab('Unviversal Scripts')
+local tab1 = lib:CreateTab('Scripts 1')
 
 tab1:Label('Universal Scripts')
 
@@ -56,4 +56,9 @@ tab1:Toggle('Fast Heal', false, function(bool)
         game.Players.LocalPlayer.Character.Humanoid.Health = game.Players.LocalPlayer.Character.Humanoid.Health + 5
         wait(0.2)
     end
+end)
+
+--Fly
+tab1:Toggle('Fly', false, function(bool)
+    code here
 end)
