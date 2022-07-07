@@ -1,93 +1,38 @@
+--Made by : https://v3rmillion.net/member.php?action=profile&uid=712121
 
-
---Settings
-local key = "RightShift" --Keyname in the quotes
-local color = { --Change the nums to change the color. It is an RGB type
-	red = 69,
-	green = 69,
-	blue = 207,
-	random = 0 --Change to 1 for random color. Could be rainbow, tho
+--[[
+Theme = {
+["MainColor"] = Color3.fromRGB(20, 20, 20);
+["BackColor"] = Color3.fromRGB(10, 10, 10);
+["AccentRGB"] = Color3.fromRGB(64, 51, 145);
+["ToggleRGB"] = Color3.fromRGB(64, 51, 145);
 }
-local randcolor = {
-	[1] = math.random(0, 255),
-	[2] = math.random(0, 255),
-	[3] = math.random(0, 255)
-}
-
-
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Kronos"))() --Kronos UI Lib
-if color.random == 1 then
-	local window = library:Window({
-	Title = "AttakDoge's Script Hub",
-	Accent = Color3.fromRGB(randcolor[1],randcolor[2],randcolor[3]),
-	Logo = 3610245066,
-	ToggleKey = Enum.KeyCode[key]
-})
-else
-	local window = library:Window({
-	Title = "AttakDoge's Script Hub",
-	Accent = Color3.fromRGB(color.red,color.green,color.blue),
-	Logo = 3610245066,
-	ToggleKey = Enum.KeyCode[key]
-})
+]]--
+local library = loadstring(game:HttpGet("https://wally-hub.eats-shit.xyz/images/ql0tevzglj94.txt"))()
+local tab1 = library.newTab("Local")
+local tab3 = library.newTab("ESP")
+local tab2 = library.newTab("Settings")
+kys = function()
+game:GetService("Players").LocalPlayer.Character:BreakJoints()
 end
-
-
-local tab = window:NewTab({
-   Title = "All Scripts",
-   Logo = 4483345998
+tab1.addbtn("die", kys)
+tab1.addtoggle("WS Enabled", "wsenb", function(enb) end)
+tab1.addbox("WS Value", "wsvalue", 16, function(value) end)
+game:GetService("RunService").RenderStepped:Connect(function()
+if library.flags["wsenb"] == false then
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+else
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = library.flags["wsvalue"]
+end
+end)
+tab2.addbtn("Destroy GUI", function() for i,v in pairs(game.CoreGui:GetChildren()) do if v.Name == "UiLib" then v:Destroy() end end end)
+tab2.addbox("Title", "titleflag", "Title Here", function(lol) end)
+tab2.addbox("Duration", "durflag", 1, function(ggg) end)
+tab2.addbox("Description", "descflag", "Description", function(ll) end)
+tab2.addbtn("Send Notification", function()
+game:GetService("StarterGui"):SetCore("SendNotification", {
+Title = library.flags["titleflag"],
+Duration = tostring(library.flags["durflag"]),
+Text = library.flags["descflag"]
 })
-
-local tabsection = tab:TabSection({
-   Title = "Main (Unviversal)"
-})
-
-local column = tabsection:AddColumn({
-   Title = "Scripts"
-})
-
-local section = column:Section({
-   Title = "Universal Scripts"
-})
-
-section:Button({
-   Text = "Button",
-   Callback = function() end
-})
-
-section:Toggle({
-   Text = "Toggle",
-   State = false,
-   Callback = function() end
-})
-
-section:TextLabel({
-   Text = "Textlabel"
-})
-
-section:Divide({})
-
-section:Keybind({
-   Text = "Keybind",
-   Key = Enum.KeyCode.F,
-   Callback = function() end
-})
-
-section:Textbox({
-   Text = "Textbox",
-   Callback = function() end
-})
-
-section:Dropdown({
-   Text = "Dropdown",
-   List = {'option1', 'option2', 'option3'},
-   Callback = function() end
-})
-
-section:Slider({
-   Text = "Slider",
-   Min = 0,
-   Max = 100,
-   Def = 50,
-   Callback = function() end
-})
+end)
