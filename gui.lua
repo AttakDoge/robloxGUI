@@ -1,38 +1,75 @@
---Made by : https://v3rmillion.net/member.php?action=profile&uid=712121
+--I made this off a template -AttakDoge
 
+--All ui stuff idk what to call it
 --[[
-Theme = {
-["MainColor"] = Color3.fromRGB(20, 20, 20);
-["BackColor"] = Color3.fromRGB(10, 10, 10);
-["AccentRGB"] = Color3.fromRGB(64, 51, 145);
-["ToggleRGB"] = Color3.fromRGB(64, 51, 145);
-}
-]]--
-local library = loadstring(game:HttpGet("https://wally-hub.eats-shit.xyz/images/ql0tevzglj94.txt"))()
-local tab1 = library.newTab("Local")
-local tab3 = library.newTab("ESP")
-local tab2 = library.newTab("Settings")
-kys = function()
-game:GetService("Players").LocalPlayer.Character:BreakJoints()
-end
-tab1.addbtn("die", kys)
-tab1.addtoggle("WS Enabled", "wsenb", function(enb) end)
-tab1.addbox("WS Value", "wsvalue", 16, function(value) end)
-game:GetService("RunService").RenderStepped:Connect(function()
-if library.flags["wsenb"] == false then
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-else
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = library.flags["wsvalue"]
-end
-end)
-tab2.addbtn("Destroy GUI", function() for i,v in pairs(game.CoreGui:GetChildren()) do if v.Name == "UiLib" then v:Destroy() end end end)
-tab2.addbox("Title", "titleflag", "Title Here", function(lol) end)
-tab2.addbox("Duration", "durflag", 1, function(ggg) end)
-tab2.addbox("Description", "descflag", "Description", function(ll) end)
-tab2.addbtn("Send Notification", function()
-game:GetService("StarterGui"):SetCore("SendNotification", {
-Title = library.flags["titleflag"],
-Duration = tostring(library.flags["durflag"]),
-Text = library.flags["descflag"]
-})
-end)
+    lib is the ui library
+    Make new tab: local (Tab variable name no parenthesis) = lib:CreateTab('Tab name')    ex: local tab1 = lib:CreateTab('Tab1') 
+
+    tab1:Label('Label name')
+
+    tab1:Button('Button name', function()
+        whatever code
+    end)
+
+    tab1:Toggle("Toggle name", true/false (default mode), function(bool)
+        whatever code
+    end)
+
+    tab1:TextBox('Text box name', 'default text', function(output)
+        whatever code
+    end)
+
+    tab1:Dropdown('Dropdown name', {'Option 1', 'Option 2', 'Option 3'} (choices for dropdown), function(output)
+        whatever code
+    end)
+
+
+]]
+
+--Made by : https://v3rmillion.net/member.php?action=profile&uid=1265584
+
+_G.Settings = {
+    ['Name'] = 'Doge Hub',
+    ['Intro'] = true,
+    ['Keybind'] = 'LeftAlt'
+    }
+    
+    local lib = loadstring(game:HttpGet("https://pastebin.com/raw/QPehPJ6m", true))() --Shadow V2 UI Library
+    
+    
+    local tab1 = lib:CreateTab('Tab1')
+    
+    tab1:Label('Epik Label')
+    tab1:Button('Epik Button', function()
+    print("OMG, YOU PRESSED THE BUTTON! YOU'RE SO SMART!")
+    end)
+    tab1:Toggle('Epik Toggle', false, function(bool)
+    print(bool)
+    end)
+    tab1:TextBox('Epik Textbox', 'Placeholder idk', function(output)
+    print(output)
+    end)
+    tab1:Dropdown('Epik Dropdown', {'Epic', 'Right?', 'Skillz'}, function(output)
+    print(output)
+    end)
+    tab1:Label('Everything is epik, totes.')
+    
+    local tab2 = Library:CreateTab('Tab2')
+    tab2:Label('OMG ANOTHER TAB!')
+    
+    
+    --[[
+    Refresh example:
+    ]]
+    local TabwithRefresh = lib:CreateTab('TabwithRefresh')
+    
+    local Dropdown = TabwithRefresh:Dropdown('Epik Dropdown', {'Epic', 'Right?', 'Skillz'}, function(output)
+    print(output)
+    end)
+    
+    wait(10)
+    
+    Dropdown:Refresh('OMG REFRESH', {'NANI', 'WHAT IS', 'THIS MAGIC?'}, function(output)
+    print(output)
+    print('lol')
+    end)
