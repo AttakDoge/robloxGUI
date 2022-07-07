@@ -83,6 +83,7 @@ end)
 --Custom tab - depends on game
 local availableGames = {
     [292439477] = 'Phantom Forces'
+    [3527629287] = 'Big Paintball'
 }
 
 local game = availableGames[game.GameId]
@@ -90,6 +91,8 @@ local game = availableGames[game.GameId]
 if game == 'Phantom Forces' then
     --All pf stuff here
     local tab2 = lib:CreateTab('Phantom Forces')
-    
 end
-
+if game == 'Big Paintball' then
+    --All big paintball stuff here
+    local tab2 = lib:CreatteLib('Big Paintball')
+end
