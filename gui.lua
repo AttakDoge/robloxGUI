@@ -58,7 +58,3 @@ tab1:Toggle('Fast Heal', false, function(bool)
     end
 end)
 
---Fly
-tab1:Toggle('Fly', false, function(bool)
-    code here
-end)
