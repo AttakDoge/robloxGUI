@@ -34,6 +34,10 @@ _G.Settings = {
 
 local lib = loadstring(game:HttpGet("https://pastebin.com/raw/QPehPJ6m", true))() --Shadow V2 UI Library
 
+--[[
+    START UNIVERSAL SCRIPTS
+]]
+
 local tab1 = lib:CreateTab('Scripts 1')
 
 tab1:Label('Universal Scripts')
@@ -67,3 +71,25 @@ end)
 tab1:Button('Reset Character', function()
     playerself.Humanoid.Health = 0
 end)
+
+--[[
+    END UNIVERSAL SCRIPTS
+]]
+
+--[[
+    START PHANTOM FORCES TAB
+]]
+
+--Custom tab - depends on game
+local availableGames = {
+    [292439477] = 'Phantom Forces'
+}
+
+local game = availableGames[game.GameId]
+
+if game == 'Phantom Forces' then
+    --All pf stuff here
+    local tab2 = lib:CreateTab('Phantom Forces')
+    
+end
+
