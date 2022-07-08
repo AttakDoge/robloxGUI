@@ -1,6 +1,8 @@
 
 --Old, could be used later, depreciated for now
 
+--Will do nothing! also has no scripts and the template is still there
+
 --Start main
 --[[
 --Settings
