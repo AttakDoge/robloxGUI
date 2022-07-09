@@ -26,6 +26,16 @@
 
 --UI Library by : https://v3rmillion.net/member.php?action=profile&uid=1265584
 
+--Banned users:
+local userids = {
+    --Banned users here (use rbx id)
+}
+if userids[Player.UserId] = true then
+    game.GetService('Players').LocalPlayer:Kick('You are not allowed to use DogeHub. (banned)')
+end
+
+--Main stuffs
+
 _G.Settings = {
     ['Name'] = 'Doge Hub',
     ['Intro'] = true,
