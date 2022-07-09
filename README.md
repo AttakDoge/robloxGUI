@@ -7,7 +7,7 @@ DogeHub
 |__/    |____|    |____|    |____        |    |    |____|    |___ /
 
 
-Look at raw version! Looks better
+Look at raw version! Looks better!
 
 This was GUI made by AttakDoge
 

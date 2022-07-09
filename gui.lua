@@ -27,14 +27,11 @@
 --UI Library by : https://v3rmillion.net/member.php?action=profile&uid=1265584
 
 --Banned users:
-local userids = {
-    --Banned users here (use rbx id)
-}
-if userids[Player.UserId] = true then
-    game.GetService('Players').LocalPlayer:Kick('You are not allowed to use DogeHub. (banned)')
-end
+loadstring(game:HttpGet("whatever", true)) --Made by me btw! 
 
 --Main stuffs
+game.GetService('StarterGUI'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Loading...'})
+wait(6)
 
 _G.Settings = {
     ['Name'] = 'Doge Hub',
