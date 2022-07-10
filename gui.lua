@@ -27,12 +27,12 @@
 --UI Library by : https://v3rmillion.net/member.php?action=profile&uid=1265584
 
 --Banned users:
-game.GetService('StarterGUI'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Checking if youre banned...'})
+game:GetService('StarterGUI'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Checking if youre banned...'})
 wait(1)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AttakDoge/robloxGUI/main/banList.lua?token=GHSAT0AAAAAABWLM3RWDDUEXWQWKD2BIMT4YWI2QOQ", true)) --Made by me btw! 
 
 --Main stuffs
-game.GetService('StarterGUI'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Loading...'})
+game:GetService('StarterGUI'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Loading...'})
 wait(6)
 
 _G.Settings = {
@@ -91,7 +91,7 @@ end)
 
 --Custom tab - depends on game
 local availableGames = {
-    [292439477] = 'Phantom Forces'
+    [292439477] = 'Phantom Forces',
     [3527629287] = 'Big Paintball'
 }
 
@@ -99,7 +99,6 @@ local game = availableGames[game.GameId]
 if game == nil then
     print('DogeHub: no games are supported!')
     print('DogeHub: only universal scripts will be shown')
-end
 else
     if game == 'Phantom Forces' then
         --All pf stuff here
