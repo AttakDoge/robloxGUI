@@ -1,5 +1,5 @@
 local userids = {
-    --Banned users here
+    [3680198138] = true
 }
 
 --todo: obfuscate below

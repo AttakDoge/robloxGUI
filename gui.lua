@@ -95,7 +95,8 @@ local availableGames = {
     [3527629287] = 'Big Paintball'
 }
 
-local game = availableGames[game.GameId]
+local game = availableGames[game.PlaceId]
+
 if game == nil then
     print('DogeHub: no games are supported!')
     print('DogeHub: only universal scripts will be shown')
