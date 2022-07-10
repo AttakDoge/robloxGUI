@@ -27,12 +27,12 @@
 --UI Library by : https://v3rmillion.net/member.php?action=profile&uid=1265584
 
 --Banned users:
-game:GetService('StarterGUI'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Checking if youre banned...'})
+game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Checking if youre banned...'})
 wait(1)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AttakDoge/robloxGUI/main/banList.lua?token=GHSAT0AAAAAABWLM3RWDDUEXWQWKD2BIMT4YWI2QOQ", true)) --Made by me btw! 
 
 --Main stuffs
-game:GetService('StarterGUI'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Loading...'})
+game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Loading...'})
 wait(6)
 
 _G.Settings = {
