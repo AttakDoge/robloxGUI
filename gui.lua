@@ -29,7 +29,7 @@
 --Banned users:
 game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Checking if youre banned...'})
 wait(1)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AttakDoge/robloxGUI/main/banList.lua?token=GHSAT0AAAAAABWLM3RWDDUEXWQWKD2BIMT4YWI2QOQ", true)) --Made by me btw! 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AttakDoge/robloxGUI/main/banned.lua", true)) --Made by me btw! 
 
 --Main stuffs
 game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'Loading...'})
