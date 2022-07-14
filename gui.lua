@@ -1,3 +1,10 @@
+--[[
+    TODO:
+    -Add more scripts
+    -Obfuscate everything
+    -Transport everything to their own stuff except Unviversal Scripts
+]]
+
 --All ui stuff idk what to call it
 --[[
     lib is the ui library
@@ -37,7 +44,7 @@ wait(6)
 
 _G.Settings = {
     ['Name'] = 'Doge Hub',
-    ['Intro'] = true,
+    ['Intro'] = false,
     ['Keybind'] = 'LeftAlt'
 }
 
@@ -54,17 +61,17 @@ tab1:Label('Universal Scripts')
 local playerself = game.Players.LocalPlayer.Character
 
 --Walkspeed
-tab1:TextBox('Walkspeed', '16', function(output)
+tab1:TextBox("Walkspeed", '16', function(output)
     playerself.Humanoid.WalkSpeed = output
 end)
 
 --Jump power
-tab1:TextBox('Jump Power', '50', function(output)
+tab1:TextBox("Jump Power", '50', function(output)
     playerself.Humanoid.Walkspeed = output
 end)
 
 --Fast heal
-tab1:Toggle('Fast Heal', false, function(bool)
+tab1:Toggle("Fast Heal", false, function(bool)
     while bool do
         playerself.Humanoid.Health = game.Players.LocalPlayer.Character.Humanoid.Health + 5
         wait(0.2)
@@ -72,12 +79,12 @@ tab1:Toggle('Fast Heal', false, function(bool)
 end)
 
 --Lots of health
-tab1:Toggle('Lots of Health', false, function(bool)
+tab1:Toggle("Lots of Health", false, function(bool)
     playerself.Humanoid.MaxHealth = math.huge
 end)
 
 --Reset Character
-tab1:Button('Reset Character', function()
+tab1:Button("Reset Character", function()
     playerself.Humanoid.Health = 0
 end)
 
@@ -105,7 +112,7 @@ else
         --All pf stuff here
         local tab2 = lib:CreateTab('Phantom Forces')
 
-        local ESP = tab2:Toggle('ESP', false, function(bool)
+        local ESP = tab2:Toggle("ESP", false, function(bool)
             game:GetService("StarterGui"):SetCore("SendNotification", {Title = "PF ESP", Text = "Success!"})
             -- Settings --
 
@@ -158,27 +165,7 @@ else
             end)
         end)
 
-        local fly = tab2:Button('Fly', function()
-            ----------------------------------------------------
-            ---  A redistribution of https://wearedevs.net/  ---
-            ----------------------------------------------------
-
-            -- Made by gamermanaway
-            -- Game: https://www.roblox.com/games/292439477/Phantom-Forces
-
-            --[[
-            Controls:
-
-            P - Toggle On/Off
-            LeftShift - Faster/Slower
-            W - Forward
-            A - Left
-            S -Backward
-            D - Right
-            LeftControl - Down
-            Space - Up
-            ]]--
-
+        local fly = tab2:Button("Fly (Broken)", function()
             local Players = game:GetService("Players")
             local UserInputService = game:GetService("UserInputService")
             local RunService = game:GetService("RunService")
@@ -260,13 +247,14 @@ else
                 end
             end)
         end)
+        --More PF stuff here
     end
 
     if game == 'Big Paintball' then
         --All big paintball stuff here
         local tab2 = lib:CreatteLib('Big Paintball')
 
-        local unlockAll = tab2:Button('Unlock All Guns', function()
+        local unlockAll = tab2:Button("Unlock All Guns", function()
             --Unlock all script
             --Credit to the person who made
             local library = require(game:GetService("ReplicatedStorage").Framework.Library)

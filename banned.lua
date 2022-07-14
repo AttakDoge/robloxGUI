@@ -1,9 +1,10 @@
+--Todo: obfuscate
 local userids = {
     [3680198138] = true
 }
 
---todo: obfuscate below
-if userids[Player.UserId] = true then
+
+if userids[game.Players.LocalPlayer.UserId] = true then
     game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'L bozo + ratio ur banned'})
     wait(0.5)
     game:GetService('StarterGui'):SetCore('SendNotification', {Title = 'DogeHub', Text = 'L bozo + ratio ur banned'})
